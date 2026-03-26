@@ -1,6 +1,7 @@
-# Bioinformatics Oneliners & Notes
+<p># Bioinformatics Basics for Genomic Data Analysis<br>
+# ===============================================<p>
 
-**[A collection of command-line examples to process and analyze genomics data]**
+**A collection of command-line examples that can be built into scripts to process genomics data**
 
 ## [BAM Processing]
 
@@ -58,4 +59,20 @@ java -jar -Xmx24g -XX:ParallelGCThreads=12 /path/to/picard.jar MergeSamFiles \
 	      TMP_DIR="${TEMP}" \
 	      MAX_RECORDS_IN_RAM=2000000 \
 	      CREATE_INDEX=true	
+```
+
+### Extract BAM Header for editing:
+<p># extract the BAM header as an editable SAM file<br>
+# change sample names or other labelling<p>
+
+```bash
+samtools view -H "${sample}.bam" > "${sample}.header.sam"
+```
+
+### Place new Header onto BAM:
+<p># add the new edited header onto the BAM<br>
+# you then need to reindex the BAM with the new header<p>
+
+```bash
+samtools reheader "${sample}.header.sam" "${sample}.bam" > "${sample}.edited.bam"
 ```
