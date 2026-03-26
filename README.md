@@ -2,8 +2,6 @@
 
 **[A collection of command-line examples to process and analyze genomics data]**
 
-[......Refer to the Docs for full details on each tool..............][biostar](https://www.biostars.org/p/142545/)
-
 ## [BAM Processing]
 
 ### Align BAM:
