@@ -7,9 +7,9 @@
 ## [BAM Processing]
 
 ### Align BAM:
-** # ideal for 30x Whole Genome Sequencing
-** # use 'samblaster' to mark duplicates for downstream analysis
-** # place sample name in BAM header to merge with later sequencing data from the same sample
+<p># ideal for 30x Whole Genome Sequencing<br>
+# use 'samblaster' to mark duplicates for downstream analysis<br>
+# place sample name in BAM header to merge with later sequencing data from the same sample<p>
 ```bash
 bwa mem -t 12 -M -R "@RG\tLB:"${sample}"\tID:"${fastq1}"\tSM:"${sample}"\tPL:Illumina" "${REFgenome}" "${fastq1}" "${fastq2}" | samblaster -M | samtools view -bhS - > "${sample}.bam"
 ```
