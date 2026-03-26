@@ -26,7 +26,7 @@ java -jar -Xmx48g -XX:ParallelGCThreads=12 /path/to/picard.jar BuildBamIndex INP
 ```
 
 ### BAM alignment stats:
-##### # make directory: /stats/ to output all stats
+<p># make directory: /stats/ to output all stats<p></p>
 ```bash
 samtools flagstat "${sample}.bam" > "./stats/${sample}.flagstats"
 ```
